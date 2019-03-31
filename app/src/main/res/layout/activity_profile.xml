@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@drawable/gradient_blue">
+            <ImageView
+                android:id="@+id/close"
+
+                android:onClick="closeClicked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:src="@drawable/ic_close_white"
+                />
+
+
+            <FrameLayout
+                android:id="@+id/frameProfilePic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp">
+                <ImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+                <ImageView
+                    android:onClick="editProfilePic"
+                    android:id="@+id/editProfilePic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:src="@drawable/ic_edit"/>
+
+            </FrameLayout>
+
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frameProfilePic"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_centerHorizontal="true"
+                android:text="@string/demo_name"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/mail_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/roboto_light"
+                android:layout_centerHorizontal="true"
+                android:text="@string/nav_header_subtitle"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/location"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/mail_id"-->
+                <!--android:layout_marginTop="2dp"-->
+                <!--android:fontFamily="@font/roboto_light"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:text="@string/demo_location"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="14sp" />-->
+
+
+            <!--Rating-->
+            <RatingBar
+                android:id="@+id/rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mail_id"
+                android:layout_marginTop="2dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:isIndicator="true"
+                android:max="5"
+                android:numStars="5"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:progressTint="@color/colorYellow"
+                android:rating="@string/demo_rating"
+                android:stepSize="1" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Your Danations-->
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="55dp"-->
+                    <!--android:paddingStart="30dp"-->
+                    <!--android:paddingEnd="20dp"-->
+                    <!--android:fontFamily="@font/roboto_light"-->
+                    <!--android:text="@string/your_donations"-->
+                    <!--android:textColor="@color/colorText"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:drawableStart="@drawable/ic_donations"-->
+                    <!--android:drawablePadding="30dp"-->
+                    <!--/>-->
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_marginStart="84dp"-->
+                    <!--android:background="@color/colorGrey"/>-->
+
+                <!--Your Requests-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="20dp"
+                    android:onClick="requestHist"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/your_requests"
+                    android:textColor="@color/colorText"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_request"
+                    android:drawablePadding="30dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="84dp"
+                    android:background="@color/colorGrey"/>
+                <!--Your Requests-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="20dp"
+                    android:onClick="yourBookmarkClicked"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/your_bookmarks"
+                    android:textColor="@color/colorText"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_bookmark_blue"
+                    android:drawablePadding="30dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="84dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrey"/>
+
+                <!--Notifications-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="20dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/notifications"
+                    android:textColor="@color/colorText"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_notifications_blue"
+                    android:drawablePadding="30dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="84dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrey"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="20dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/logout"
+                    android:textColor="@color/colorLightRed"
+                    android:textSize="16sp"
+                    android:onClick="logout"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_logout_red"
+                    android:drawablePadding="30dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="84dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrey"/>
+
+                <TextView
+                    android:onClick="DeactivateAccountClicked"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="20dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/de_activate_your_account"
+                    android:textColor="@color/colorDeepRed"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_delete_forever_red"
+                    android:drawablePadding="30dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="84dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorGrey"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:onClick="EditProfileClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        app:fabSize="normal"
+        android:src="@drawable/ic_edit"/>
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+

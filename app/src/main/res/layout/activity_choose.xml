@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.Choose"
+    tools:showIn="@layout/activity_choose">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="355dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="43dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_marginBottom="100dp"
+            android:text="First lets get you a setup"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.087" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="358dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="50dp"
+            android:text="What do you wanna do" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioProject"
+                android:layout_width="162dp"
+                android:layout_height="37dp"
+                android:checked="false"
+                android:clickable="true"
+                android:duplicateParentState="false"
+                android:focusable="auto"
+                android:text="Project" />
+
+            <RadioButton
+                android:id="@+id/radioStudy"
+                android:layout_width="160dp"
+                android:layout_height="42dp"
+                android:clickable="true"
+                android:text="Study" />
+        </RadioGroup>
+
+
+        <Button
+            android:onClick="Goto"
+            android:background="@drawable/gradient_blue_round_corners"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:text="CONTINUE"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
